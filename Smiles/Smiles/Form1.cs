@@ -23,16 +23,18 @@ namespace Smiles
         {
             string read = File.ReadAllText(".../../smiley_content.json");
             JavaScriptSerializer tercuman = new JavaScriptSerializer();
-            List<Item> list = new List<Item>();
-            list  = tercuman.Deserialize<List<Item>>(read);
-            
+            List<RootObject > list = new List<RootObject >();
+            list  = tercuman.Deserialize<List<RootObject >>(read);
+            int sayi = 0;
             foreach (var item in list )
             {
                 Button btn = new Button();
-                string json = item.art.ToString()+Environment.NewLine+item.name.ToString();
+                btn.Width = 120;
+                btn.Height = 40;
+                btn.BackColor = Color.GreenYellow;
+                string json = item.items[0].art + Environment .NewLine +item.category;
                 btn.Text = json;
                 flowLayoutPanel1.Controls.Add(btn);
-                
 
             }
         }
