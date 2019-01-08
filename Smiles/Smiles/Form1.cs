@@ -25,7 +25,7 @@ namespace Smiles
             JavaScriptSerializer tercuman = new JavaScriptSerializer();
             List<RootObject > list = new List<RootObject >();
             list  = tercuman.Deserialize<List<RootObject >>(read);
-            int sayi = 0;
+            
             foreach (var item in list )
             {
                 Button btn = new Button();
